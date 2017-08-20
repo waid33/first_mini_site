@@ -1,0 +1,4 @@
+a:3:{s:5:"title";s:7:"Pushkin";s:5:"price";s:4:"1538";s:2:"id";i:59749;}
+a:3:{s:5:"title";s:6:"Dikens";s:5:"price";s:4:"3800";s:2:"id";i:10154;}
+a:3:{s:5:"title";s:11:"Dostoevskiy";s:5:"price";s:5:"17777";s:2:"id";i:21928;}
+a:3:{s:5:"title";s:11:"Dostoevskiy";s:5:"price";s:4:"5500";s:2:"id";i:28590;}

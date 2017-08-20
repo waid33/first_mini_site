@@ -1,0 +1,3 @@
+a:2:{s:5:"email";s:9:"mike@i.ua";s:8:"password";s:8:"michel23";}
+a:2:{s:5:"email";s:6:"bob@ds";s:8:"password";s:5:"hello";}
+a:2:{s:5:"email";s:10:"doris@i.ua";s:8:"password";s:5:"doris";}

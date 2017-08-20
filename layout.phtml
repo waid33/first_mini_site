@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset = utf-8">
+		<title>Mini site</title>
+	</head>
+	<body>
+        <div class = "menu">
+            <a href="<?=$my_uri.'?controller=books&amp;action=list';?>">Books</a>
+            <a href="<?=$my_uri.'?controller=feedback';?>">Feedback messages</a>
+            <a href="<?=$my_uri.'?controller=security&amp;login=1';?>">Log in</a>
+            <a href="<?=$my_uri.'?controller=security&amp;logout=1';?>">Logout</a>
+        </div>
+        <hr>
+        <div class="content">
+            <p><?=$msg;?></p>
+            <?=$content?>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="footer">
+            some footer
+        </div>
+    </body>
+</html>
