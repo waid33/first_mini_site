@@ -16,7 +16,7 @@ function formBookIsValid(){
 if(!function_exists($action)){
     //$controllerFile = 'list';
     setFlash('Function is not exist'); 
-    redirect($my_uri."\index.php");
+    redirect("/index.php");
 }
 $content =$action();
 
@@ -52,7 +52,8 @@ function createAction(){
 function editAction(){
     $id = requestGet('id');
     if(!$id){
-       redirect("/index.php");    
+        setFlash('id is not correct');
+        redirect("/index.php");    
     }    
     $books = loadBooks();
     $bookFound = false;
@@ -90,23 +91,18 @@ function editAction(){
 function deleteAction(){
     $id = requestGet('id');
     if(!$id){
+        setFlash('id is not correct');
         redirect("/index.php");    
     }    
     $books = loadBooks();
-    $bookFound = false;
-    //& to edit
+    
     foreach($books as $key => $book){
         if($id == $book['id']){
-            $bookFound = true;
             unset($books[$key]);
             setFlash('Book was deleted');
             break;
         }
-    }
-    if(!$bookFound){
-        setFlash("Book was not found and did not delete");
-       redirect("/index.php");
-    }   
+    }  
     fopen(BOOKS_STORAGE,'w');
     fclose();
     

@@ -6,10 +6,14 @@
 	</head>
 	<body>
         <div class = "menu">
-            <a href="<?=$my_uri.'?controller=books&amp;action=list';?>">Books</a>
-            <a href="<?=$my_uri.'?controller=feedback';?>">Feedback messages</a>
-            <a href="<?=$my_uri.'?controller=security&amp;login=1';?>">Log in</a>
-            <a href="<?=$my_uri.'?controller=security&amp;logout=1';?>">Logout</a>
+            <a href="index.php?controller=books&amp;action=list">Books</a>
+            <a href="index.php?controller=feedback">Feedback messages</a>
+            <?php if(isset($_SESSION['user'])) :?>
+                <a href="index.php?controller=security&amp;logout=1">Logout</a>
+                <b><?php echo "Welcome  ".$_SESSION['user'];?></b>
+            <?php else :?>
+                <a href="index.php?controller=security&amp;login=1">Log in</a>
+            <?php endif;?>
         </div>
         <hr>
         <div class="content">

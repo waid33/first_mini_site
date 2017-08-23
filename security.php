@@ -16,15 +16,12 @@ if(requestGet('login') == 1){
                 if($user['email'] == requestPost('email') && $user['password'] == requestPost('password')){
                     $_SESSION['user'] = $user['email'];
                     setFlash('Logged in');
-                    $_POST['checked'] = 'checked';
                     //перенаправляем на страницу доступа
                     redirect("/index.php");
                 }
             }
             setFlash("User not found");
-            if(isset($_POST['checked'])){
-                unset($_POST['checked']);
-            }
+            
             //redirect to same page - GET
             redirect("/index.php/login_form.phtml");
             }

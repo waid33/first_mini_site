@@ -4,14 +4,21 @@
         <td>Id</td>
         <td>Title</td>
         <td>Price</td>
-        <td>Actions</td>
+        <?php if(isset($_SESSION['user'])):?>
+            <td>Actions</td>
+        <?php endif; ?>
     </tr>
     <?php foreach($books as $book): ?>
         <tr>
         <td><?=$book['id']?></td>
         <td><?=$book['title']?></td>
         <td><?=$book['price']?></td>
-        <td><a href="?controller=books&amp;action=edit&amp;id=<?=$book['id']?>">Edit</a> <a href="?controller=books&amp;action=delete&amp;id=<?=$book['id']?>">Delete</a></td>
+        <?php if(isset($_SESSION['user'])):?>
+            <td>
+                <a href="?controller=books&amp;action=edit&amp;id=<?=$book['id']?>">Edit</a>
+                <a href="?controller=books&amp;action=delete&amp;id=<?=$book['id']?>">Delete</a>
+            </td>
+        <?php endif; ?>
     </tr>
     <?php endforeach; ?>
 </table>
