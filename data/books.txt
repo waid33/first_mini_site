@@ -2,3 +2,8 @@ a:3:{s:5:"title";s:7:"Pushkin";s:5:"price";s:4:"1538";s:2:"id";i:59749;}
 a:3:{s:5:"title";s:8:"Turgenev";s:5:"price";s:5:"12345";s:2:"id";i:47562;}
 a:3:{s:5:"title";s:5:"Block";s:5:"price";s:5:"32456";s:2:"id";i:82522;}
 a:3:{s:5:"title";s:11:"Dostoevskiy";s:5:"price";s:4:"1500";s:2:"id";i:56558;}
+a:3:{s:5:"title";s:7:"Tutchev";s:5:"price";s:4:"2750";s:2:"id";i:51273;}
+a:3:{s:5:"title";s:5:"Belov";s:5:"price";s:4:"2500";s:2:"id";i:57264;}
+a:3:{s:5:"title";s:7:"Tutchev";s:5:"price";s:4:"2750";s:2:"id";i:97441;}
+a:3:{s:5:"title";s:5:"Belov";s:5:"price";s:4:"2500";s:2:"id";i:36179;}
+a:3:{s:5:"title";s:7:"Voronov";s:5:"price";s:2:"17";s:2:"id";i:17848;}

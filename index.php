@@ -2,13 +2,12 @@
 //Единая точка входа
 session_start();
 
+//redirect to same page
+$uri = pathinfo($_SERVER['REQUEST_URI']);
+$uri = $uri['dirname'];
+
 require "functions.php";
 $msg = getFlash('msg');
-
-//redirect to same page - GET
-global $my_uri;
-$my_uri = str_replace('C:\xampp\htdocs','',__FILE__);
-$my_uri = str_replace('\\','/',$my_uri);
 
 $controller = requestGet('controller','books');
 

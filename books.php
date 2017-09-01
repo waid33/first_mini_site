@@ -1,5 +1,5 @@
 <?php
-
+global $uri;
 define('BOOKS_STORAGE','data/books.txt');
 // list -> listAction
 $action = requestGet('action','list').'Action';
@@ -16,10 +16,9 @@ function formBookIsValid(){
 if(!function_exists($action)){
     //$controllerFile = 'list';
     setFlash('Function is not exist'); 
-    redirect("/index.php");
+    redirect($uri."/index.php");
 }
 $content =$action();
-
 
 function listAction(){
     $books = loadBooks();
@@ -29,8 +28,8 @@ function listAction(){
     return ob_get_clean();
 }
 
-
 function createAction(){
+    global $uri;
     if($_POST){
         //validation
         if(formBookIsValid()){
@@ -39,7 +38,7 @@ function createAction(){
             $book = serialize($book);
             file_put_contents(BOOKS_STORAGE,$book.PHP_EOL, FILE_APPEND);
             setFlash("Book was created");
-            redirect("/index.php");   
+            redirect($uri."/index.php");   
         }
     }    
     echo "just page";
@@ -50,10 +49,11 @@ function createAction(){
 
 
 function editAction(){
+    global $uri;
     $id = requestGet('id');
     if(!$id){
         setFlash('id is not correct');
-        redirect("/index.php");    
+        redirect($uri."/index.php");    
     }    
     $books = loadBooks();
     $bookFound = false;
@@ -66,7 +66,7 @@ function editAction(){
     }
     if(!$bookFound){
         setFlash('Book was not found');
-        redirect("/index.php");
+        redirect($uri."/index.php");
     }
     
     if($_POST){
@@ -79,7 +79,7 @@ function editAction(){
             file_put_contents(BOOKS_STORAGE,serialize($b).PHP_EOL,FILE_APPEND);
         }
         setFlash('Book was edited');
-        redirect("/index.php");
+        redirect($uri."/index.php");
     }
     //можно добавить проверку id
     ob_start();
@@ -89,10 +89,11 @@ function editAction(){
 
 
 function deleteAction(){
+    global $uri;
     $id = requestGet('id');
     if(!$id){
         setFlash('id is not correct');
-        redirect("/index.php");    
+        redirect($uri."/index.php");    
     }    
     $books = loadBooks();
     
@@ -109,7 +110,7 @@ function deleteAction(){
     foreach($books as $b){
         file_put_contents(BOOKS_STORAGE,serialize($b).PHP_EOL,FILE_APPEND);
     }
-    redirect("/index.php");
+    redirect($uri."/index.php");
 }
 
 

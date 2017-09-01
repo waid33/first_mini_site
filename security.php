@@ -4,7 +4,7 @@
 if(requestGet('logout') == 1){
     unset($_SESSION['user']);
     setFlash('Logged out');
-    redirect("/index.php");
+    redirect($uri."/index.php");
 }
 
 $users = loadUsers();
@@ -17,13 +17,13 @@ if(requestGet('login') == 1){
                     $_SESSION['user'] = $user['email'];
                     setFlash('Logged in');
                     //перенаправляем на страницу доступа
-                    redirect("/index.php");
+                    redirect($uri."/index.php");
                 }
             }
             setFlash("User not found");
             
             //redirect to same page - GET
-            redirect("/index.php/login_form.phtml");
+            redirect($uri."/index.php/login_form.phtml");
             }
                 $msg = ("Form invalid");
     }
