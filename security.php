@@ -17,13 +17,13 @@ if(requestGet('login') == 1){
                     $_SESSION['user'] = $user['email'];
                     setFlash('Logged in');
                     //перенаправляем на страницу доступа
-                    redirect($uri."/index.php");
+                    redirect($path."/index.php");
                 }
             }
             setFlash("User not found");
             
             //redirect to same page - GET
-            redirect($uri."/index.php/login_form.phtml");
+            redirect($path."/index.php/login_form.phtml");
             }
                 $msg = ("Form invalid");
     }

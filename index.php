@@ -5,6 +5,9 @@ session_start();
 //redirect to same page
 $uri = pathinfo($_SERVER['REQUEST_URI']);
 $uri = $uri['dirname'];
+$schema = $_SERVER['REQUEST_SCHEME']."://";
+$serverName = $_SERVER['SERVER_NAME'];
+$path = $schema.$serverName.$uri;
 
 require "functions.php";
 $msg = getFlash('msg');
